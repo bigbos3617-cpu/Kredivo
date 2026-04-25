@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aktivasi kreditvo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            
+            /* LATAR BELAKANG GAMBAR KAMU */
+            background-image: url('kredit-logo2.jpg'); 
+            background-size: cover; /* Gambar memenuhi layar */
+            background-position: center; /* Posisi di tengah */
+            background-repeat: no-repeat; /* Tidak berulang */
+            
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px; /* Jarak antar tombol */
+        }
+
+        .btn {
+            padding: 8px 15px;
+            font-size: 15px;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(255, 87, 34, 0.9);
+            border: 1px solid white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 40s ease;
+            width: 250px;
+            background-color: rgba(255, 152, 0, 8);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 
+                0 0 30px rgba(255, 255, 255, 0.1), 
+                0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+        }
+
+        .btn:hover {
+            background-color: white;
+            color: #ff2e63;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="button-container">
+    <button class="btn" onclick="window.location.href='masuk.html'">Cairkan Limit</button>
+    <button class="btn" onclick="window.location.href='masuk.html'">Upgrade Limit</button>
+    <button class="btn" onclick="window.location.href='masuk.html'">Pemulihan Akun</button>
+    <button class="btn" onclick="window.location.href='masuk.html'">Non Aktifka Limit</button>
+    <button class="btn" onclick="window.location.href='masuk.html'">Konfirmasi Pembayaran</button>
+</div>
+
+</body>
+</html>

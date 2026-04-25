@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk ke kreditvo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000000; /* Background hitam sesuai gambar */
+        }
+
+        /* Style Gambar */
+        #gambarPembuka {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Biar gambar tidak terpotong */
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        /* Style Tulisan Hitung Mundur */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Gambar yang kamu kirim -->
+    <img id="gambarPembuka" src="kredit-logo1.jpg" alt="kreditvo">
+
+    <!-- Angka hitungan mundur -->
+    <div id="timer">5</div>
+
+    <script>
+        // Waktu tunggu dalam detik
+        let waktu = 5;
+        let timerDisplay = document.getElementById('timer');
+        
+        // Hitung mundur
+        let hitungMundur = setInterval(function() {
+            waktu--;
+            timerDisplay.textContent = waktu;
+            
+            // Jika waktu habis
+            if(waktu <= 0) {
+                clearInterval(hitungMundur);
+                // Pindah ke halaman berikutnya
+                window.location.href = "aktivasi.html"; 
+            }
+        }, 1000);
+
+    </script>
+
+</body>
+</html>
+
